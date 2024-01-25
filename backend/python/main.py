@@ -1,6 +1,10 @@
 from flask import Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+# Allow any origin...
+CORS(app)
 
 @app.route("/")
 def index():

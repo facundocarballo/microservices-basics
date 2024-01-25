@@ -1,7 +1,15 @@
+import { ApiRequest } from "@/src/handlers/axios";
 import { Box, Heading, VStack } from "@chakra-ui/react";
 import Head from "next/head";
+import React from "react";
 
 export default function DatabaseMicroservice() {
+  const handleGetData = async () => {
+    await ApiRequest.GET("http://localhost:3004")
+  }
+  React.useEffect(() => {
+    handleGetData()
+  }, [])
   return (
     <>
       <Head>
